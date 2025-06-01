@@ -3,3 +3,4 @@ include::../_base.adoc[]
 :stylesdir: ../styles
 :stylesheet: modern-style.css
 :toc: left
+:tocbot: NO
