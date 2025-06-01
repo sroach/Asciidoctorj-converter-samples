@@ -1,0 +1,5 @@
+include::../_base.adoc[]
+:source-highlighter: highlightjs
+:stylesdir: ../styles
+:stylesheet: modern-style.css
+:toc: left
