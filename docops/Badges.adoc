@@ -2,7 +2,7 @@ include::_base.adoc[]
 = DocOps.io Badges
 
 
-reaction::[]
+reactions::[]
 == Badges
 
 
