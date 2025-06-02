@@ -75,7 +75,7 @@ Bravo 1
 .Cookies & Cream
 ====
 
-[docops,buttons,role="center"]
+[docops,buttons,role="left"]
 ----
 {
   "buttons": [
@@ -113,7 +113,7 @@ Bravo 1
 ====
 
 
-[docops,badge]
+[docops,badge,role=left]
 ----
 Docs|Up to date||#1A237E|#3F51B5|<book>|#fcfcfc
 API|Documented||#BF360C|#FF5722|<api>|#fcfcfc
