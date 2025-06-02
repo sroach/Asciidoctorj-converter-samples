@@ -20,3 +20,39 @@ GitHub|Follow|https://github.com/docops|#24292E|#181717|<github>|#fcfcfc
 Twitter|@docops|https://twitter.com/docops|#1DA1F2|#1DA1F2|<twitter>|#fcfcfc
 LinkedIn|Connect|https://linkedin.com/company/docops|#0A66C2|#0A66C2|<linkedin>|#fcfcfc
 ----
+
+
+[source,indent=0,role="primary"]
+.Alpha
+----
+Alpha 1
+----
+
+[source,indent=0,role="secondary"]
+.Bravo
+----
+Bravo 1
+----
+
+[source,indent=0,role="primary"]
+.Charlie
+----
+Charlie 1
+----
+
+[source,indent=0,role="secondary"]
+.Delta
+----
+Delta 1
+----
+
+[source,indent=0,role="secondary"]
+.Badge Docs
+....
+[docops,badge]
+----
+Docs|Up to date||#1A237E|#3F51B5|<book>|#fcfcfc
+API|Documented||#BF360C|#FF5722|<api>|#fcfcfc
+Examples|Available||#006064|#00BCD4|<code>|#fcfcfc
+----
+....
