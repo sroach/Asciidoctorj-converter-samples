@@ -34,16 +34,79 @@ Bravo 1
 ----
 
 [source,indent=0,role="primary"]
-.Charlie
+.Sales
+====
+
+[docops,pie, role=left]
 ----
-Charlie 1
+{
+"pies": [
+{
+"percent": 19,
+"label": "Sales Training"
+},
+{
+"percent": 25,
+"label": "Conventions"
+},
+
+    {
+      "percent": 18.0,
+      "label": "Publications"
+    },
+    {
+      "percent": 12.0,
+      "label": "Print Advertising"
+    },
+    {
+      "percent": 17.0,
+      "label": "Catalogues"
+    },
+    {
+      "percent": 10.0,
+      "label": "Online Advertising"
+    }
+  ], "pieDisplay": {"baseColor":  "#b2e061", "outlineColor" : "#DA0C81", "useDark": false, "scale": 1}
+}
 ----
+====
 
 [source,indent=0,role="secondary"]
-.Delta
+.Cookies & Cream
+====
+
+[docops,buttons,role="center"]
 ----
-Delta 1
+{
+  "buttons": [
+    {
+      "label": "Cookies & Cream",
+      "link": "https://www.apple.com",
+      "type": "Cookies",
+      "color": "#400000"
+    }
+  ],
+  "buttonType": "REGULAR",
+  "theme": {
+    "colors": [
+      "#c9d7e4",
+      "#003a49",
+      "#00156f",
+      "#5500b5",
+      "#ae00ab"
+    ],
+    "scale": 1.1,
+    "columns": 3,
+    "sortBy": {
+      "sort": "TYPE"
+    },
+    "buttonStyle": {
+      "labelStyle": "font-family: Arial, Helvetica, sans-serif; font-size: 20px; fill: #fcfcfc; letter-spacing: normal;font-weight: bold;"
+    }
+  }
+}
 ----
+====
 
 [source,indent=0,role="secondary"]
 .Badge Docs
