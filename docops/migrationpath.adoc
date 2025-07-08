@@ -1,0 +1,44 @@
+include::_base.adoc[]
+= Migration Guide: v1.0 → v2.0
+
+== Breaking Changes
+
+=== Authentication
+- **v1.0**: Basic Auth with API keys
+- **v2.0**: OAuth 2.0 with JWT tokens
+
+=== Endpoints
+.Endpoint Mapping
+[cols="1,1,1"]
+|===
+| v1.0 Endpoint | v2.0 Endpoint | Status
+| `GET /api/users` | `GET /api/v2/users` | ✅ Direct mapping
+| `POST /api/user` | `POST /api/v2/users` | ⚠️ Payload changed
+| `PUT /api/user/{id}` | `PATCH /api/v2/users/{id}` | ⚠️ Method changed
+| `DELETE /api/user/{id}` | `DELETE /api/v2/users/{id}` | ✅ Direct mapping
+|===
+
+=== Response Format Changes
+
+.v1.0 Response
+[source,json]
+----
+{
+ "data": {},
+ "success": true,
+ "message": "OK"
+}
+----
+
+.v2.0 Response
+[source,json]
+----
+{
+ "data": {},
+ "meta": {
+ "timestamp": "2024-01-01T12:00:00Z",
+ "version": "2.0",
+ "request_id": "abc123"
+ }
+}
+----

@@ -1,0 +1,24 @@
+include::_base.adoc[]
+= Version Support Policy
+
+== Support Lifecycle
+
+. **Active Development** (12 months)
+- New features added
+- Bug fixes and security updates
+- Full support available
+
+. **Maintenance Mode** (12 months)
+- Critical bug fixes only
+- Security updates
+- Limited support
+
+. **Deprecated** (6 months)
+- Security fixes only
+- Migration assistance
+- Sunset warnings
+
+. **End of Life**
+- No support
+- API may be disabled
+- Breaking changes possible

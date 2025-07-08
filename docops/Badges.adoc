@@ -59,7 +59,7 @@ Bravo 1
       "label": "Print Advertising"
     },
     {
-      "percent": 17.0,
+      "percent": 67.0,
       "label": "Catalogues"
     },
     {
@@ -110,8 +110,7 @@ Bravo 1
 
 [source,indent=0,role="secondary"]
 .Badge Docs
-====
-
+=====
 
 [docops,badge,role=left]
 ----
@@ -119,4 +118,4 @@ Docs|Up to date||#1A237E|#3F51B5|<book>|#fcfcfc
 API|Documented||#BF360C|#FF5722|<api>|#fcfcfc
 Examples|Available||#006064|#00BCD4|<code>|#fcfcfc
 ----
-====
+=====

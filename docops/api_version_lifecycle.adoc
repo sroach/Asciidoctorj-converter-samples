@@ -1,0 +1,31 @@
+include::_base.adoc[]
+= API Version Lifecycle
+
+== Current Versions
+
+=== v2.1 (Current Recommended)
+- **Status**: Current, Fully Supported
+- **Released**: January 2024
+- **Support Until**: January 2027
+- **New Features**: GraphQL support, bulk operations, enhanced rate limiting
+
+=== v2.0 (Stable)
+- **Status**: Stable, Maintenance Mode
+- **Released**: June 2023
+- **Support Until**: June 2026
+- **Deprecation Notice**: Will enter deprecation phase in June 2025
+
+=== v1.0 (Legacy)
+- **Status**: ⚠️ DEPRECATED
+- **Released**: January 2022
+- **Deprecated**: June 2024
+- **End of Life**: December 31, 2024
+- **Migration Required**: All clients must migrate to v2.0+ before EOL
+
+== Upcoming Versions
+
+=== v3.0 (Beta)
+- **Status**: Beta Testing
+- **Beta Release**: November 2024
+- **Expected GA**: Q2 2025
+- **New Features**: Real-time events, AI-powered endpoints, WebSocket support

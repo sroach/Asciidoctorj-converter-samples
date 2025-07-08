@@ -1,0 +1,390 @@
+include::_base.adoc[]
+= API Versioning Documentation
+:toc: left
+:toclevels: 3
+:sectnums:
+:icons: font
+:source-highlighter: highlight.js
+
+== Version Strategy Documentation
+
+=== Semantic Versioning Approach
+
+----
+API Versioning Strategy
+
+Version Format: MAJOR.MINOR.PATCH (e.g., 2.1.3)
+
+- MAJOR: Breaking changes that require code updates
+- MINOR: New features, backwards compatible
+- PATCH: Bug fixes, backwards compatible
+
+Current Versions
+- v2.1.3 (Current) - Production ready
+- v2.0.5 (Deprecated) - Support ends Dec 2024
+- v1.4.2 (Legacy) - Critical fixes only
+
+Version Lifecycle
+Beta (6 months) → Stable (24 months) → Deprecated (12 months) → End of Life
+----
+
+== API Version Lifecycle
+
+=== Current Versions
+
+==== v2.1 (Current Recommended)
+- **Status**: Current, Fully Supported
+- **Released**: January 2024
+- **Support Until**: January 2027
+- **New Features**: GraphQL support, bulk operations, enhanced rate limiting
+
+==== v2.0 (Stable)
+- **Status**: Stable, Maintenance Mode
+- **Released**: June 2023
+- **Support Until**: June 2026
+- **Deprecation Notice**: Will enter deprecation phase in June 2025
+
+==== v1.0 (Legacy)
+- **Status**: ⚠️ DEPRECATED
+- **Released**: January 2022
+- **Deprecated**: June 2024
+- **End of Life**: December 31, 2024
+- **Migration Required**: All clients must migrate to v2.0+ before EOL
+
+=== Upcoming Versions
+
+==== v3.0 (Beta)
+- **Status**: Beta Testing
+- **Beta Release**: November 2024
+- **Expected GA**: Q2 2025
+- **New Features**: Real-time events, AI-powered endpoints, WebSocket support
+
+== Version Comparison Matrix
+
+[cols="1,1,1,1,1", options="header"]
+|===
+|Feature |v1.x |v2.0 |v2.1 |v3.0 (Beta)
+
+|User Management
+|✅
+|✅
+|✅
+|✅
+
+|OAuth 2.0
+|❌
+|✅
+|✅
+|✅
+
+|Webhooks
+|❌
+|✅
+|✅
+|✅
+
+|GraphQL Support
+|❌
+|❌
+|✅
+|✅
+
+|Rate Limiting
+|Basic
+|Advanced
+|Advanced
+|AI-Powered
+
+|Bulk Operations
+|❌
+|Limited
+|Full
+|Full
+
+|Real-time Events
+|❌
+|❌
+|❌
+|✅
+|===
+
+== Migration Guide: v1.0 → v2.0
+
+=== Breaking Changes
+
+==== Authentication
+- **v1.0**: Basic Auth with API keys
+- **v2.0**: OAuth 2.0 with JWT tokens
+
+==== Endpoints
+
+[cols="2,2,1", options="header"]
+|===
+|v1.0 Endpoint |v2.0 Endpoint |Status
+
+|`GET /api/users`
+|`GET /api/v2/users`
+|✅ Direct mapping
+
+|`POST /api/user`
+|`POST /api/v2/users`
+|⚠️ Payload changed
+
+|`PUT /api/user/{id}`
+|`PATCH /api/v2/users/{id}`
+|⚠️ Method changed
+
+|`DELETE /api/user/{id}`
+|`DELETE /api/v2/users/{id}`
+|✅ Direct mapping
+|===
+
+==== Response Format Changes
+
+.v1.0 Response
+[source,json]
+----
+{
+  "data": {...},
+  "success": true,
+  "message": "OK"
+}
+----
+
+.v2.0 Response
+[source,json]
+----
+{
+  "data": {...},
+  "meta": {
+    "timestamp": "2024-01-01T12:00:00Z",
+    "version": "2.0",
+    "request_id": "abc123"
+  }
+}
+----
+
+== Version Support Policy
+
+=== Support Lifecycle
+
+1. **Active Development** (12 months)
+- New features added
+- Bug fixes and security updates
+- Full support available
+
+2. **Maintenance Mode** (12 months)
+- Critical bug fixes only
+- Security updates
+- Limited support
+
+3. **Deprecated** (6 months)
+- Security fixes only
+- Migration assistance
+- Sunset warnings
+
+4. **End of Life**
+- No support
+- API may be disabled
+- Breaking changes possible
+
+=== Current Status Timeline
+
+[source]
+----
+2024 -------|-------|-------|-------|-------|-------|-------
+           Jan     Apr     Jul     Oct     Jan     Apr     Jul
+            |       |       |       |       |       |       |
+           v2.1    v1.0    v3.0    v1.0    v2.0     ?      v2.1
+          Release  Deprec  Beta    EOL    Maint.           Deprec
+----
+
+== Change Log
+
+=== v2.1.0 (2024-01-15)
+
+==== 🚀 New Features
+- **GraphQL Support**: New `/graphql` endpoint for flexible queries
+- **Bulk Operations**: Batch create/update/delete operations
+- **Enhanced Rate Limiting**: Per-endpoint rate limits
+
+==== 🔧 Improvements
+- **Performance**: 40% faster response times for list operations
+- **Documentation**: Interactive API explorer updated
+
+==== 🐛 Bug Fixes
+- Fixed pagination issue in `/users` endpoint
+- Resolved timezone handling in date filters
+
+==== ⚠️ Deprecation Notices
+- `GET /api/v2/users/search` will be deprecated in v3.0
+- Use GraphQL queries instead
+
+=== v2.0.1 (2023-12-10)
+
+==== 🔒 Security
+- Fixed OAuth token validation vulnerability (CVE-2023-XXXX)
+- Enhanced input sanitization
+
+==== 🐛 Bug Fixes
+- Corrected error message format for validation errors
+
+== Client SDK Version Compatibility
+
+[cols="1,1,1,1", options="header"]
+|===
+|SDK Language |v1.0 API |v2.0 API |v2.1 API
+
+|Java SDK 1.x
+|✅
+|❌
+|❌
+
+|Java SDK 2.x
+|❌
+|✅
+|✅
+
+|Python SDK 1.x
+|✅
+|❌
+|❌
+
+|Python SDK 2.x
+|❌
+|✅
+|✅
+
+|JavaScript SDK 3.x
+|❌
+|✅
+|✅
+
+|Go SDK 1.x
+|❌
+|✅
+|✅
+|===
+
+=== Installation Commands
+
+.Java (Maven)
+[source,xml]
+----
+<!-- For v2.1 API -->
+<dependency>
+    <groupId>com.yourcompany</groupId>
+    <artifactId>api-client</artifactId>
+    <version>2.1.0</version>
+</dependency>
+----
+
+.Python
+[source,bash]
+----
+pip install yourapi-client==2.1.0
+----
+
+.JavaScript
+[source,bash]
+----
+npm install @yourcompany/api-client@^2.1.0
+----
+
+== Migration Timeline Communication
+
+=== Important Dates
+
+==== ⏰ January 2024
+- **v2.1 Released**: New recommended version
+- **v1.0 Deprecation Warning**: 6-month sunset period begins
+
+==== ⏰ June 2024
+- **v1.0 Officially Deprecated**: Limited support only
+- **Migration Tools Available**: Automated migration scripts released
+
+==== ⏰ September 2024
+- **Final Migration Window**: Last chance for assisted migration
+- **v1.0 Performance Degradation**: Intentional slowdown begins
+
+==== ⏰ December 31, 2024
+- **v1.0 End of Life**: API will return 410 Gone for all requests
+- **No Rollback**: Migration is mandatory
+
+=== Migration Assistance
+
+- **Migration Scripts**: Available at `/tools/migration`
+- **Dedicated Support**: migration-help@yourcompany.com
+- **Office Hours**: Weekly migration Q&A sessions
+- **Documentation**: Step-by-step migration guide
+
+== Version Header Examples
+
+.Request with version header
+[source,http]
+----
+GET /api/users HTTP/1.1
+Host: api.yourcompany.com
+Authorization: Bearer your-token
+Accept: application/json
+API-Version: 2.1
+----
+
+.Response with version info
+[source,http]
+----
+HTTP/1.1 200 OK
+Content-Type: application/json
+API-Version: 2.1
+Sunset: "2027-01-01T00:00:00Z"
+Deprecation: "2026-01-01T00:00:00Z"
+----
+
+== Best Practices
+
+=== Version Header Strategy
+
+[TIP]
+====
+Always include version information in both requests and responses:
+
+- Use `API-Version` header for explicit version selection
+- Include `Sunset` header to communicate deprecation dates
+- Provide `Deprecation` header for advance warning
+====
+
+=== Backward Compatibility
+
+[IMPORTANT]
+====
+Maintain backward compatibility within minor versions:
+
+- Add new optional fields
+- Never remove existing fields
+- Expand enum values carefully
+- Maintain existing behavior
+====
+
+=== Communication Strategy
+
+[NOTE]
+====
+Effective version communication includes:
+
+- Clear migration timelines
+- Multiple notification channels
+- Comprehensive documentation
+- Migration assistance tools
+====
+
+== Conclusion
+
+Proper API versioning is crucial for maintaining a healthy ecosystem of API consumers. By following semantic versioning principles, providing clear migration paths, and maintaining transparent communication about version lifecycles, you can ensure smooth transitions for your enterprise API consumers.
+
+Remember to:
+
+- Communicate changes well in advance
+- Provide migration tools and assistance
+- Maintain clear documentation
+- Follow consistent versioning policies
+- Support multiple versions during transition periods

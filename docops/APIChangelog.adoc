@@ -1,0 +1,89 @@
+include::_base.adoc[]
+= API Changelog
+
+== v2.1.0 (2024-01-15)
+
+=== 🚀 New Features
+
+* *GraphQL Support*: New `/graphql` endpoint for flexible queries
+* *Bulk Operations*: Batch create/update/delete operations
+* *Enhanced Rate Limiting*: Per-endpoint rate limits
+
+=== 🔧 Improvements
+
+* *Performance*: 40% faster response times for list operations
+* *Documentation*: Interactive API explorer updated
+
+=== 🐛 Bug Fixes
+
+* Fixed pagination issue in `/users` endpoint
+* Resolved timezone handling in date filters
+
+=== ⚠️ Deprecation Notices
+
+* `GET /api/v2/users/search` will be deprecated in v3.0
+* Use GraphQL queries instead
+
+== v2.0.1 (2023-12-10)
+
+=== 🔒 Security
+
+* Fixed OAuth token validation vulnerability (CVE-2023-XXXX)
+* Enhanced input sanitization
+
+=== 🐛 Bug Fixes
+
+* Corrected error message format for validation errors
+
+
+== Client SDK Version Compatibility
+
+=== SDK Compatibility Matrix
+
+[cols="1,1,1,1", options="header"]
+|===
+| SDK Language | v1.0 API | v2.0 API | v2.1 API
+
+| Java SDK 1.x | ✅ | ❌ | ❌
+| Java SDK 2.x | ❌ | ✅ | ✅
+| Python SDK 1.x | ✅ | ❌ | ❌
+| Python SDK 2.x | ❌ | ✅ | ✅
+| JavaScript SDK 3.x | ❌ | ✅ | ✅
+| Go SDK 1.x | ❌ | ✅ | ✅
+|===
+
+
+=== Installation Commands
+
+
+
+==== Java (Maven)
+
+[souce,xml]
+----
+<dependency>
+ <groupId>com.yourcompany</groupId>
+ <artifactId>api-client</artifactId>
+ <version>2.1.0</version>
+</dependency>
+----
+
+==== Python
+
+[source,python]
+----
+pip install yourapi-client==2.1.0
+----
+
+==== JavaScript
+
+[source,javascript]
+----
+npm install @yourcompany/apilink:mailto:&#45;c&#108;&#x69;&#x65;&#x6e;&#x74;&#64;&#x5e;&#x32;.&#49;&#x2e;&#48;[&#45;c&#108;&#x69;&#x65;&#x6e;&#x74;&#64;&#x5e;&#x32;.&#49;&#x2e;&#48;]
+
+----
+
+=== Migration Timeline Communication
+
+
+

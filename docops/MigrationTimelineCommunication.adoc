@@ -1,0 +1,32 @@
+include::_base.adoc[]
+= Migration Timeline: v1.0 → v2.0
+
+== Important Dates
+
+=== ⏰ January 2024
+
+* *v2.1 Released*: New recommended version
+* *v1.0 Deprecation Warning*: 6-month sunset period begins
+
+=== ⏰ June 2024
+
+* *v1.0 Officially Deprecated*: Limited support only
+* *Migration Tools Available*: Automated migration scripts released
+
+=== ⏰ September 2024
+
+* *Final Migration Window*: Last chance for assisted migration
+* *v1.0 Performance Degradation*: Intentional slowdown begins
+
+=== ⏰ December 31, 2024
+
+* *v1.0 End of Life*: API will return 410 Gone for all requests
+* *No Rollback*: Migration is mandatory
+
+== Migration Assistance
+
+* *Migration Scripts*: Available at `/tools/migration`
+* *Dedicated Support*: link:mailto:m&#105;&#103;&#114;a&#116;i&#x6f;&#110;&#x2d;&#x68;&#101;&#108;p&#x40;&#x79;o&#117;&#x72;&#x63;&#111;&#109;&#112;&#97;&#110;&#x79;&#x2e;&#99;&#111;&#109;[m&#105;&#103;&#114;a&#116;i&#x6f;&#110;&#x2d;&#x68;&#101;&#108;p&#x40;&#x79;o&#117;&#x72;&#x63;&#111;&#109;&#112;&#97;&#110;&#x79;&#x2e;&#99;&#111;&#109;]
+* *Office Hours*: Weekly migration Q&amp;A sessions
+* *Documentation*: Step-by-step migration guide
+
